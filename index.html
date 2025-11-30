@@ -5,112 +5,186 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Academic Assist Hub</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<style>
+  .glass {
+    backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+  }
+  .ai-gradient {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  }
+  .ai-card {
+    background: linear-gradient(145deg, #ffffff, #f3f4f6);
+    border-radius: 20px;
+  }
+  .floating-wa {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: 0.3s;
+  }
+  .floating-wa:hover {
+    transform: scale(1.1);
+  }
+</style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<style>
+.glass{backdrop-filter:blur(12px);background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);} 
+.glow-border{box-shadow:0 0 18px rgba(0,150,255,0.4);} 
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-100 text-gray-800">
 
 <!-- Header -->
-<header class="bg-white shadow-sm">
-  <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-semibold">AAH</div>
+<header class="ai-gradient text-white shadow-lg animate__animated animate__fadeInDown">
+  <div class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-14 h-14 rounded-xl glass flex items-center justify-center text-white font-bold text-xl">AAH</div>
       <div>
-        <h1 class="text-lg font-bold">Academic Assist Hub</h1>
-        <p class="text-sm text-gray-500">Research Paper • Thesis • Data Analysis • Editing</p>
+        <h1 class="text-xl font-bold">Academic Assist Hub</h1>
+        <p class="text-sm opacity-80">Professional • Ethical • Academic Support</p>
       </div>
     </div>
-    <nav class="hidden md:flex gap-6 text-sm">
+    <nav class="hidden md:flex gap-8 text-sm font-medium">
       <a href="#services" class="hover:underline">Services</a>
-      <a href="#pricing" class="hover:underline">Pricing</a>
-      <a href="#packages" class="hover:underline">Packages</a>
       <a href="#contact" class="hover:underline">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- Hero -->
-<section class="max-w-6xl mx-auto px-6 py-12">
-<h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">Professional Academic Support — on your schedule</h2>
-<p class="mt-4 text-gray-600">Editing, formatting, thesis guidance, data analysis and publication support — ethical, high-quality help that improves your work.</p>
-<div class="mt-6 flex gap-3">
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSem9mRyV9BFOADt8B5huCDJZ1FGxZUqbovV_-XfP7tRJenbVQ/viewform?usp=publish-editor" target="_blank" class="inline-block bg-blue-600 text-white px-5 py-3 rounded-lg shadow">Place an Order</a>
-<!----a href="#services" class="inline-block border border-gray-200 px-5 py-3 rounded-lg">View services</a>---->
-</div>
+<!-- Hero Section -->
+<section class="max-w-6xl mx-auto px-6 py-16" data-aos="fade-up">
+  <div class="ai-card shadow-xl p-10 rounded-2xl">
+    <h2 class="text-4xl font-extrabold bg-clip-text text-transparent ai-gradient">Professional Academic Support</h2>
+    <p class="mt-4 text-gray-600 text-lg">Guidance for literature reviews, formatting, editing, visualizations, coding support, and more — with a polished academic touch.</p>
+
+    <div class="mt-8 flex gap-4">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSem9mRyV9BFOADt8B5huCDJZ1FGxZUqbovV_-XfP7tRJenbVQ/viewform?usp=publish-editor" target="_blank" class="ai-gradient text-white px-6 py-3 rounded-xl shadow-md text-lg">Place an Order</a>
+      <a href="#services" class="px-6 py-3 rounded-xl border border-gray-300 bg-white shadow">View Services</a>
+    </div>
+  </div>
 </section>
 
 <!-- Services -->
-<section id="services" class="max-w-6xl mx-auto px-6 py-10">
-  <h3 class="text-2xl font-bold">Services</h3>
-  <p class="text-gray-600 mt-2">Ethical, high-quality academic support.</p>
-  <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="bg-white rounded-lg p-6 shadow">
-      <h4 class="font-semibold">Research Paper Support</h4>
-      <ul class="mt-3 text-sm text-gray-600 space-y-1 list-disc list-inside">
+<section id="services" class="max-w-6xl mx-auto px-6 py-12" data-aos="fade-up">
+  <h3 class="text-3xl font-bold mb-6">Our Services</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="ai-card p-6 shadow rounded-2xl" data-aos="fade-right">
+      <h4 class="font-semibold text-lg">Research & Writing Support</h4>
+      <ul class="mt-3 text-gray-700 space-y-1 text-sm list-disc list-inside">
         <li>Literature review guidance</li>
-        <li>Structuring & flow</li>
-        <li>Language editing & proofreading</li>
-        <li>Citation & formatting</li>
+        <li>Formatting (IEEE, APA, MLA, Elsevier)</li>
+        <li>Grammar editing & improvement</li>
+        <li>Rewriting & paraphrasing</li>
+        <li>Abstract & title refinement</li>
+        <li>Citations & references</li>
+        <li>Proofreading</li>
       </ul>
     </div>
-    <div class="bg-white rounded-lg p-6 shadow">
-      <h4 class="font-semibold">Thesis / Dissertation Support</h4>
-      <ul class="mt-3 text-sm text-gray-600 space-y-1 list-disc list-inside">
-        <li>Chapter-wise feedback</li>
-        <li>Formatting help</li>
-        <li>Plagiarism reduction advice</li>
-        <li>Proposal slides</li>
+
+    <div class="ai-card p-6 shadow rounded-2xl" data-aos="fade-up">
+      <h4 class="font-semibold text-lg">Technical & Coding Support</h4>
+      <ul class="mt-3 text-gray-700 space-y-1 text-sm list-disc list-inside">
+        <li>Graphs, charts & visualizations</li>
+        <li>MATLAB, Mathematica, Python</li>
+        <li>Numerical results & simulations</li>
+        <li>MS Word & LaTeX formatting</li>
       </ul>
     </div>
-    <div class="bg-white rounded-lg p-6 shadow">
-      <h4 class="font-semibold">Data Analysis</h4>
-      <ul class="mt-3 text-sm text-gray-600 space-y-1 list-disc list-inside">
-        <li>SPSS, R, Python</li>
-        <li>Statistical tests</li>
-        <li>Graphs & visualizations</li>
+
+    <div class="ai-card p-6 shadow rounded-2xl" data-aos="fade-left">
+      <h4 class="font-semibold text-lg">Additional Services</h4>
+      <ul class="mt-3 text-gray-700 space-y-1 text-sm list-disc list-inside">
+        <li>Resume / CV writing</li>
+        <li>Research poster design</li>
+        <li>PowerPoint presentation</li>
+        <li>Academic content editing</li>
+        <li>Journal submission help</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- Pricing -->
-<section id="pricing" class="max-w-6xl mx-auto px-6 py-10">
-  <h3 class="text-2xl font-bold">Pricing</h3>
-  <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h4 class="font-semibold">Basic</h4>
-      <p class="text-sm text-gray-600">Proofreading, grammar check</p>
-      <p class="mt-4 font-bold">₹250–₹500 / 1000 words</p>
+<!-- Contact Section -->
+<!-- FAQ Section -->
+<section id="faq" class="max-w-6xl mx-auto px-6 py-12">
+  <h3 class="text-2xl font-bold">Frequently Asked Questions</h3>
+  <div class="mt-6 space-y-4">
+    <div class="bg-white shadow rounded-xl p-5 cursor-pointer transition hover:shadow-md" onclick="this.querySelector('.faq-answer').classList.toggle('hidden')">
+      <p class="font-semibold text-gray-800">Do you provide original writing?</p>
+      <p class="faq-answer hidden text-gray-600 mt-2 text-sm">I provide editing, formatting, rewriting support, and technical assistance — not academic ghostwriting.</p>
     </div>
-    <div class="bg-white p-6 rounded-lg shadow border-2 border-blue-600">
-      <h4 class="font-semibold">Standard</h4>
-      <p class="text-sm text-gray-600">Editing, plagiarism reduction</p>
-      <p class="mt-4 font-bold">₹500–₹1200 / 1000 words</p>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow">
-      <h4 class="font-semibold">Premium</h4>
-      <p class="text-sm text-gray-600">Deep editing + data interpretation</p>
-      <p class="mt-4 font-bold">₹1500–₹3000 / 1000 words</p>
+    <div class="bg-white shadow rounded-xl p-5 cursor-pointer transition hover:shadow-md" onclick="this.querySelector('.faq-answer').classList.toggle('hidden')">
+      <p class="font-semibold text-gray-800">Do you handle coding and simulations?</p>
+      <p class="faq-answer hidden text-gray-600 mt-2 text-sm">Yes — MATLAB, Mathematica, Python plots, simulations and technical formatting.</p>
     </div>
   </div>
 </section>
 
-<!-- Contact & WhatsApp -->
-<section id="contact" class="max-w-6xl mx-auto px-6 py-10">
-  <h3 class="text-2xl font-bold">Contact</h3>
-<a href="mailto:academicassisthub.team@gmail.com" class="text-blue-600">academicassisthub.team@gmail.com</a>
-  <!---p class="text-sm text-gray-600">Phone/WhatsApp: <a href="https://wa.me/919000000000" target="_blank" class="text-green-600">+91 9009000000</a></p>---->
-  <p class="text-sm text-gray-600 mt-2">Follow us: <span class="text-blue-600">Instagram</span> • <span class="text-blue-600">LinkedIn</span></p>
+<section id="contact" class="max-w-6xl mx-auto px-6 py-12" data-aos="fade-up">
+  <h3 class="text-3xl font-bold mb-4">Contact Us</h3>
+  <p class="text-gray-700 text-lg">Email: <a href="mailto:academicassisthub.team@gmail.com" class="text-blue-600 font-semibold">academicassisthub.team@gmail.com</a></p>
+  <p class="text-gray-700 text-lg">WhatsApp: <a href="https://wa.me/919492396181" target="_blank" class="text-green-600 font-semibold">+91 9492396181</a></p>
 </section>
 
-<!-- Footer with logo placeholder -->
-<footer class="bg-white mt-10 border-t">
-  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-    <div class="flex items-center gap-3">
-      <img src="logo.png" alt="Academic Assist Hub Logo" class="w-10 h-10 rounded-full">
-      <p class="text-sm text-gray-600">© 2025 Academic Assist Hub. All rights reserved.</p>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919492396181" class="floating-wa animate__animated animate__pulse animate__infinite">💬</a>
+
+<!-- Footer -->
+<!-- AI-Style Footer -->
+<footer class="bg-gradient-to-br from-gray-900 to-black text-gray-300 mt-16">
+  <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div>
+      <h3 class="text-xl font-bold text-white">Academic Assist Hub</h3>
+      <p class="mt-3 text-gray-400 text-sm">Professional academic and technical support for research scholars and students.</p>
     </div>
-    <div class="text-sm text-gray-600">Designed with care • Privacy & Terms</div>
+    <div>
+      <h4 class="text-lg font-semibold text-white">Quick Links</h4>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li><a href="#services" class="hover:text-white">Services</a></li>
+        <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-lg font-semibold text-white">Contact</h4>
+      <a href="mailto:academicassisthub.team@gmail.com" class="text-blue-400 text-sm">academicassisthub.team@gmail.com</a>
+      <br>
+      <a href="https://wa.me/919492396181" target="_blank" class="text-green-400 text-sm">WhatsApp: +91 9xxxxxxxxx</a>
+    </div>
   </div>
+  <div class="border-t border-gray-700 py-4 text-center text-sm text-gray-500">© 2025 Academic Assist Hub. All rights reserved.</div>
 </footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration:900,once:true});</script>
+<a href="https://wa.me/919492396181" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-xl animate__animated animate__pulse animate__infinite">
+<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' fill='white' viewBox='0 0 24 24'><path d='M20.52 3.48A11.8 11.8 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.17 1.6 6L0 24l6.29-1.64A12 12 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.24-6.21-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.45l-.38-.23-3.74.97.99-3.65-.25-.39A9.87 9.87 0 0 1 2 12C2 6.48 6.48 2 12 2c2.63 0 5.1 1.02 6.96 2.88A9.87 9.87 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.2-7.98c-.28-.14-1.65-.82-1.9-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.24-1.4-.83-.74-1.39-1.64-1.55-1.92-.16-.28-.02-.43.12-.57.12-.12.28-.33.42-.49.14-.16.19-.28.28-.47.1-.19.05-.35-.02-.49-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49-.16-.01-.35-.01-.54-.01-.19 0-.49.07-.75.35-.26.28-1 1-1 2.47s1.02 2.86 1.16 3.06c.14.19 2 3.16 4.83 4.43.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33z'/></svg>
+</a>
+<!-- Floating Contact Form Button -->
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSem9mRyV9BFOADt8B5huCDJZ1FGxZUqbovV_-XfP7tRJenbVQ/viewform?usp=publish_editor" target="_blank" class="fixed bottom-6 right-24 bg-blue-600 text-white p-4 rounded-full shadow-xl animate__animated animate__pulse animate__infinite">
+📩
+</a>
 
 </body>
 </html>
